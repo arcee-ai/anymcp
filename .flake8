@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 100
+exclude = .git,__pycache__,build,dist,*.egg-info
+# For black compatibility
+ignore = E203, W503 

@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anymcp"
+version = "0.0.1"
+description = "An adapter library for Model Context Protocol (MCP) SSE servers to connect as stdio"
+readme = "README.md"
+authors = [
+    {name = "Arcee AI"},
+]
+license = {text = "MIT"}
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "anyio",
+    "httpx",
+    "httpx_sse",
+    "sseclient-py",
+    "typing-extensions",
+    "mcp",
+    "loguru>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "black>=23.3.0",
+    "isort>=5.11.5",
+    "flake8",
+    "build",
+    "twine",
+]
+
+[project.scripts]
+anymcp = "anymcp.cli.anymcp:main"
+
+[tool.setuptools]
+packages = ["anymcp", "anymcp.cli"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[project.urls]
+Repository = "https://github.com/arcee-ai/anymcp"
