@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "anymcp"
-version = "0.0.1"
+version = "0.0.3"
 description = "An adapter library for Model Context Protocol (MCP) SSE servers to connect as stdio"
 readme = "README.md"
 authors = [
@@ -28,8 +28,8 @@ dependencies = [
     "httpx_sse",
     "sseclient-py",
     "typing-extensions",
-    "mcp",
-    "loguru>=0.7.0",
+    "mcp==1.7.1",
+    "loguru>=0.7.0"
 ]
 
 [project.optional-dependencies]
